@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "standard",
+    "standard-jsx"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "jsx-quotes": ["error", "prefer-double"]
+  }
+}
