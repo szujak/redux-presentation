@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.form__input {
+  outline: 0;
+}
+
+.form__button {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  outline: 0;
+  appearance: none;
+  border-radius: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
