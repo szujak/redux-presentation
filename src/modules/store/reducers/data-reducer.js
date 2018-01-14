@@ -7,18 +7,20 @@ const initialState = {
   dataFetched: false
 }
 
-export default function dataReducer (state = initialState, {data, type}) {
+export default function dataReducer (state = initialState, {payload, type}) {
   switch (type) {
     case FETCHING_DATA:
       return {
         ...state,
         data: {},
+        error: false,
         isFetching: true
       }
     case FETCHING_DATA_SUCCESS:
       return {
         ...state,
-        data,
+        data: payload,
+        error: false,
         isFetching: false
       }
     case FETCHING_DATA_FAILURE:
