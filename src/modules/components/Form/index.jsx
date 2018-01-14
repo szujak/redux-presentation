@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 import styles from './index.css'
 
-export default class App extends Component {
+export default class Form extends Component {
   constructor (props, context) {
     super(props, context)
 
@@ -44,10 +44,10 @@ export default class App extends Component {
   }
 }
 
-App.propTypes = {
+Form.propTypes = {
   onSubmit: PropTypes.func.isRequired
 }
 
-App.defaultProps = {
+Form.defaultProps = {
   onSubmit: (data) => console.log(data)
 }
