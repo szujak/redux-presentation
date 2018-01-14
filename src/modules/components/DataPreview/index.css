@@ -1,0 +1,9 @@
+.data {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.data__container {
+  text-align: center;
+}

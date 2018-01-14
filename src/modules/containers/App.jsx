@@ -4,6 +4,7 @@ import React, { Component, Fragment } from 'react'
 
 import './App.css'
 import Form from '../components/Form'
+import DataPreview from '../components/DataPreview'
 import { getData } from '../store/actions/data-actions'
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <Fragment>
         <Form onSubmit={this.onFormSubmit} />
+        <DataPreview data={this.props.appData.data} />
       </Fragment>
     )
   }
