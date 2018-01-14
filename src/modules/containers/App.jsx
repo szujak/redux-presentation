@@ -1,16 +1,11 @@
 import 'normalize.css'
-import axios from 'axios'
 import { connect } from 'react-redux'
 import React, { Component, Fragment } from 'react'
 
 import './App.css'
 import Form from '../components/Form'
 import DataPreview from '../components/DataPreview'
-import {
-  getData,
-  getDataSuccess,
-  getDataFailure
-} from '../store/actions/data-actions'
+import { getData } from '../store/actions/data-actions'
 
 class App extends Component {
   constructor (props, context) {
@@ -21,15 +16,6 @@ class App extends Component {
 
   onFormSubmit (username) {
     this.props.getData(username)
-
-    axios
-      .get(`https://api.github.com/users/${username}`)
-      .then(response => {
-        this.props.getDataSuccess(response.data)
-      })
-      .catch(error => {
-        this.props.getDataFailure(error)
-      })
   }
 
   render () {
@@ -52,9 +38,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: (username) => dispatch(getData(username)),
-  getDataSuccess: (data) => dispatch(getDataSuccess(data)),
-  getDataFailure: (error) => dispatch(getDataFailure(error))
+  getData: (username) => dispatch(getData(username))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
