@@ -5,6 +5,16 @@ import styles from './index.css'
 
 export default class DataPreview extends Component {
   render () {
+    if (this.props.error) {
+      return (
+        <div className={styles.data}>
+          <div className={styles.data__container}>
+            <p>Error</p>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className={styles.data}>
         <div className={styles.data__container}>
@@ -18,9 +28,11 @@ export default class DataPreview extends Component {
 }
 
 DataPreview.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  error: PropTypes.bool.isRequired
 }
 
 DataPreview.defaultProps = {
-  data: undefined
+  data: undefined,
+  error: false
 }
